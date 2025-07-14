@@ -10,8 +10,7 @@ def main(stdscr):
     BLUE_AND_YELLOW = curses.color_pair(1)
     GREEN_AND_BLACK = curses.color_pair(2)
     stdscr.clear()
-    for i in range(100):
-        
+    for i in range(100):        
         color = BLUE_AND_YELLOW
         if i % 2 == 0:
             color = GREEN_AND_BLACK
