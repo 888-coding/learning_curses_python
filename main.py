@@ -10,7 +10,7 @@ def start_screen(stdscr):
     stdscr.getkey()
 
 def wpm_teste(stdscr):
-    target_text = "Hellow world this is some teste text for this app"
+    target_text = "Hello world this is some test text for this app"
     current_text = []
 
     stdscr.clear()
