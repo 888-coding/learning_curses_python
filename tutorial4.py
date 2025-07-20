@@ -1,6 +1,7 @@
 # tutorial4 , users input and textboxes
 import curses 
 from curses import wrapper
+from curses.textpad import Textbox, rectangle
 import time 
 
 def main(stdscr):
@@ -8,26 +9,7 @@ def main(stdscr):
 	curses.init_pair(2, curses.COLOR_GREEN, curses.COLOR_BLACK)
 	curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
 
-	x, y = 0, 0 
-	string_x = 0 
-
-	while True:
-		key = stdscr.getkey()
-
-		if key == "KEY_LEFT":
-			x -= 1
-		elif key == "KEY_RIGHT":
-			x += 1 
-		elif key == "KEY_UP":
-			y -= 1 
-		elif key == "KEY_DOWN":
-			y += 1 
-
-		stdscr.clear()
-		string_x += 1
-		stdscr.addstr(0, string_x//50, "hello world")
-		stdscr.addstr(y, x,"0")
-		stdscr.refresh()		
-
-
+	rectangle(stdscr, 2, 2, 10, 20)
+	stdscr.getch()
+	stdscr.refresh()
 wrapper(main)
