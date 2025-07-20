@@ -9,9 +9,11 @@ def main(stdscr):
 	curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
 
 	x, y = 0, 0 
+	string_x = 0 
 
 	while True:
 		key = stdscr.getkey()
+
 		if key == "KEY_LEFT":
 			x -= 1
 		elif key == "KEY_RIGHT":
@@ -22,6 +24,8 @@ def main(stdscr):
 			y += 1 
 
 		stdscr.clear()
+		string_x += 1
+		stdscr.addstr(0, string_x//50, "hello world")
 		stdscr.addstr(y, x,"0")
 		stdscr.refresh()		
 
