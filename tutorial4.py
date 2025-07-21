@@ -9,7 +9,14 @@ def main(stdscr):
 	curses.init_pair(2, curses.COLOR_GREEN, curses.COLOR_BLACK)
 	curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
 
-	rectangle(stdscr, 2, 2, 10, 20)
-	stdscr.getch()
+	win = curses.newwin(3, 18, 2, 2)
+	box = Textbox(win)
+
+	rectangle(stdscr, 1, 1, 5, 20)
 	stdscr.refresh()
+	box.edit()
+	text = box.gather().strip().replace("\n","")
+
+	stdscr.addstr(10, 40, text)
+	stdscr.getch()
 wrapper(main)
